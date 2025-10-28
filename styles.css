@@ -1,44 +1,319 @@
-/* styles.css */
+/* Estilos personalizados para la hoja de vida de Jhon Loaiza */
+
+/* Estilos base del body */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
-/* Animaciones sutiles */
+/* Estilos para títulos de sección */
+h2 {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilos para las tarjetas */
 .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 0.25rem;
+    transition: none !important;
+    transform: none !important;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: none !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Colores personalizados */
-.bg-primary {
-    background-color: #0d6efd !important;
+.card:focus {
+    transform: none !important;
 }
 
-.text-primary {
-    color: #0d6efd !important;
+.card-body {
+    padding: 1.5rem;
 }
 
-/* Estilos para iconos */
-i {
-    margin-right: 8px;
-    color: #0d6efd; /* Color azul de Bootstrap */
+/* Estilos para los títulos de las tarjetas */
+.card-body h3,
+.card-body h4,
+.card-body h5 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
 }
 
-/* Espaciado adicional para la sección de datos personales */
-#personal .card-body p {
-    margin-bottom: 10px;
+/* Estilos para los íconos */
+.fas, .fa {
+    color: #007bff;
+    margin-right: 0.5rem;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
 }
 
-/* Estilos para la foto de perfil */
-header img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border: 4px solid #fff; /* Borde blanco */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+/* Específicamente para íconos en botones */
+.btn .fas, .btn .fa {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+}
+
+/* Para íconos en enlaces */
+a .fas, a .fa {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+}
+
+/* Estilos para las tarjetas de proyectos */
+.card.h-100 {
+    display: flex;
+    flex-direction: column;
+}
+
+.card.h-100 .card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card.h-100 .card-text {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.card.h-100 .btn {
+    margin-top: auto;
+    align-self: flex-start;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* Estilos para el botón scroll to top */
+#scrollToTop {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+#scrollToTop:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para enlaces en el footer */
+footer a {
+    color: #fff !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #f8f9fa !important;
+    text-decoration: none;
+}
+
+footer a i {
+    color: #fff;
+}
+
+/* Estilos para botones */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Estilos para el navbar */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+/* Estilos para el header */
+header {
+    background-color: #000000;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #000000;
+}
+
+/* Estilos para texto muted */
+.text-muted {
+    color: #6c757d !important;
+}
+
+/* Estilos para listas */
+.list-unstyled li {
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para el botón scroll to top */
+#scrollToTop {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+}
+
+#scrollToTop:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para las secciones */
+section {
+    margin-bottom: 0.5rem;
+    scroll-margin-top: 80px;
+}
+
+/* Estilos para texto justificado */
+.text-justify {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+}
+
+/* Asegurar justificación en móvil */
+@media (max-width: 768px) {
+    .text-justify {
+        text-align: justify !important;
+        text-justify: inter-word !important;
+    }
+}
+
+/* Estilos específicos para tarjetas de proyectos */
+.card-text.text-justify {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+}
+
+/* Asegurar justificación en tarjetas de proyectos en móvil */
+@media (max-width: 768px) {
+    .card-text.text-justify {
+        text-align: justify !important;
+        text-justify: inter-word !important;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .display-6 {
+        font-size: 1.5rem;
+    }
+    
+    .h5 {
+        font-size: 1rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .navbar-nav {
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 0.25rem 0;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .navbar-nav .nav-link {
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .navbar-collapse {
+        text-align: center !important;
+    }
+    
+    .navbar-collapse .navbar-nav {
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+    
+    /* Estilos específicos para el menú colapsado */
+    .navbar-collapse.show .navbar-nav,
+    .navbar-collapse.collapsing .navbar-nav {
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .navbar-collapse.show .navbar-nav .nav-item,
+    .navbar-collapse.collapsing .navbar-nav .nav-item {
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .navbar-collapse.show .navbar-nav .nav-link,
+    .navbar-collapse.collapsing .navbar-nav .nav-link {
+        text-align: center !important;
+        width: 100% !important;
+        padding: 0.5rem 1rem !important;
+    }
+    
+    /* Layout móvil para el header */
+    .header-mobile {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .header-mobile .col-md-3 {
+        flex: 0 0 auto;
+        width: auto;
+    }
+    
+    .header-mobile .col-md-6 {
+        flex: 1;
+        text-align: left;
+    }
+    
+    .header-mobile img {
+        max-width: 80px;
+        height: 80px;
+    }
+    
+    .header-mobile h1 {
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .header-mobile p {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
 }
