@@ -1,319 +1,1160 @@
-/* Estilos personalizados para la hoja de vida de Jhon Loaiza */
+/* ============================================
+   HOJA DE VIDA - JHON LOAIZA
+   Estilos mejorados y organizados
+   ============================================ */
 
-/* Estilos base del body */
+/* Variables CSS */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --info-color: #3498db;
+    
+    --light-bg: #f8f9fa;
+    --dark-bg: #2c3e50;
+    --card-bg: #ffffff;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --text-white: #ffffff;
+    
+    --border-radius: 10px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+}
+
+/* Tema oscuro */
+.dark-theme {
+    --light-bg: #1a1a2e;
+    --dark-bg: #16213e;
+    --card-bg: #0f3460;
+    --text-dark: #e6e6e6;
+    --text-light: #b3b3b3;
+    --text-white: #ffffff;
+}
+
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+    transition: var(--transition);
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* Estilos para títulos de sección */
-h2 {
-    color: #333;
-    font-weight: bold;
-}
-
-/* Estilos para las tarjetas */
-.card {
+/* Botón tema */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: var(--secondary-color);
+    color: white;
     border: none;
-    border-radius: 10px;
-    margin-bottom: 0.25rem;
-    transition: none !important;
-    transform: none !important;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
 }
 
-.card:hover {
-    transform: none !important;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+.theme-toggle:hover {
+    transform: rotate(30deg);
+    box-shadow: var(--box-shadow-hover);
 }
 
-.card:focus {
-    transform: none !important;
+/* Header */
+.header-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-white);
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
 }
 
-.card-body {
-    padding: 1.5rem;
+.profile-img-container {
+    position: relative;
+    display: inline-block;
 }
 
-/* Estilos para los títulos de las tarjetas */
-.card-body h3,
-.card-body h4,
-.card-body h5 {
-    color: #333;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: var(--transition);
 }
 
-/* Estilos para los íconos */
-.fas, .fa {
-    color: #007bff;
-    margin-right: 0.5rem;
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: inline-block !important;
+.profile-img:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Específicamente para íconos en botones */
-.btn .fas, .btn .fa {
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: inline-block !important;
+.profile-status {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--success-color);
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
 }
 
-/* Para íconos en enlaces */
-a .fas, a .fa {
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: inline-block !important;
+.profile-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
-/* Estilos para las tarjetas de proyectos */
-.card.h-100 {
+.profile-title {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.skill-tag {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-white);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.quick-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-link {
+    color: var(--text-white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.contact-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateX(3px);
+}
+
+/* Indicador de scroll */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.scroll-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Navbar */
+.navbar-main {
+    background: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: var(--transition);
+    min-height: 56px;
+}
+
+.navbar-brand .brand-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-white) !important;
+    font-weight: 500;
+    padding: 10px 15px !important;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    margin: 0 2px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    background: var(--secondary-color);
+    color: var(--text-white) !important;
+}
+
+.nav-social {
+    display: flex;
+    gap: 12px;
+}
+
+.social-link {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Contenido principal */
+.main-content {
+    padding: 40px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.content-section {
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.content-section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.dark-theme .section-title {
+    color: var(--text-dark);
+}
+
+/* Tarjetas de información */
+.info-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--info-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.info-content h6 {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.info-content p,
+.info-content a {
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.dark-theme .info-content p,
+.dark-theme .info-content a {
+    color: var(--text-dark);
+}
+
+.info-content a:hover {
+    color: var(--secondary-color);
+}
+
+/* Tarjetas Sobre Mí */
+.about-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.about-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent-color), #ff7675);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.about-content h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.dark-theme .about-content h4 {
+    color: var(--text-dark);
+}
+
+.about-content p {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Timeline de experiencia */
+.experience-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-item.current .timeline-badge {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(231, 76, 60, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+    }
+}
+
+.timeline-badge {
+    position: absolute;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    background: var(--secondary-color);
+    border: 3px solid var(--card-bg);
+    border-radius: 50%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.7rem;
+}
+
+.timeline-content {
+    margin-left: 50px;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    flex: 1;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-content:hover {
+    transform: translateX(5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.timeline-header h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.dark-theme .timeline-header h4 {
+    color: var(--text-dark);
+}
+
+.timeline-date {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.timeline-subtitle {
+    color: var(--accent-color);
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.timeline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+}
+
+.timeline-list li {
+    margin-bottom: 6px;
+    padding-left: 18px;
+    position: relative;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.timeline-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+.timeline-duration {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Tarjetas de Educación */
+.education-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.education-card.highlight {
+    border-top: 3px solid var(--secondary-color);
+}
+
+.education-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.education-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--info-color), #3498db);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.education-header h5 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.dark-theme .education-header h5 {
+    color: var(--text-dark);
+}
+
+.education-year {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.education-desc {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.education-badge {
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--secondary-color);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Habilidades - Desarrollo Web */
+.skill-category-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--box-shadow);
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.skill-category-title {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.dark-theme .skill-category-title {
+    color: var(--text-dark);
+}
+
+.skill-list {
+    margin-bottom: 20px;
+}
+
+.skill-item {
+    margin-bottom: 18px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.skill-bar {
+    height: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color), var(--info-color));
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+/* Habilidades Blandas - Distribuidas */
+.soft-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.soft-skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.soft-skill-tag {
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--secondary-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: var(--transition);
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.soft-skill-tag:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+    border-color: var(--secondary-color);
+}
+
+/* Herramientas */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.tool-item {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.dark-theme .tool-item {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tool-item:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.tool-item i {
+    font-size: 1.5rem;
+}
+
+.tool-item span {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Tarjetas de Proyectos */
+.project-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    height: 100%;
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
 }
 
-.card.h-100 .card-body {
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.project-icon {
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.project-content {
+    padding: 20px;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 }
 
-.card.h-100 .card-text {
-    flex-grow: 1;
-    margin-bottom: 1rem;
+.project-title {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
 }
 
-.card.h-100 .btn {
+.dark-theme .project-title {
+    color: var(--text-dark);
+}
+
+.project-desc {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.tech-tag {
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--secondary-color);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.project-button-container {
     margin-top: auto;
-    align-self: flex-start;
-    min-height: 38px;
+    display: flex;
+    align-items: flex-end;
+    min-height: 50px;
+}
+
+.project-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    padding: 10px 20px;
+    border: 2px solid rgba(52, 152, 219, 0.2);
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
 }
 
-/* Estilos para el botón scroll to top */
-#scrollToTop {
-    background-color: #007bff;
-    border-color: #007bff;
+.project-link:hover {
+    background: var(--secondary-color);
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease;
+    transform: translateY(-2px);
+    border-color: var(--secondary-color);
+}
+
+/* Contacto */
+.contact-card {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--border-radius);
+    padding: 30px;
+    color: white;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-card h4 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+.contact-info-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--box-shadow);
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-info-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--info-color));
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
-}
-
-#scrollToTop:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Estilos para enlaces en el footer */
-footer a {
-    color: #fff !important;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #f8f9fa !important;
-    text-decoration: none;
-}
-
-footer a i {
-    color: #fff;
-}
-
-/* Estilos para botones */
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-/* Estilos para el navbar */
-.navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.9);
-    transition: color 0.3s ease;
-}
-
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #fff;
-}
-
-/* Estilos para el header */
-header {
-    background-color: #000000;
-}
-
-/* Estilos para el footer */
-footer {
-    background-color: #000000;
-}
-
-/* Estilos para texto muted */
-.text-muted {
-    color: #6c757d !important;
-}
-
-/* Estilos para listas */
-.list-unstyled li {
-    margin-bottom: 0.5rem;
-}
-
-/* Estilos para el botón scroll to top */
-#scrollToTop {
-    background-color: #007bff;
-    border-color: #007bff;
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease;
+    font-size: 1rem;
+    flex-shrink: 0;
 }
 
-#scrollToTop:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+.contact-info-item h6 {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
 }
 
-/* Estilos para las secciones */
-section {
-    margin-bottom: 0.5rem;
-    scroll-margin-top: 80px;
+.contact-info-item a,
+.contact-info-item p {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-/* Estilos para texto justificado */
-.text-justify {
-    text-align: justify !important;
-    text-justify: inter-word !important;
+.dark-theme .contact-info-item a,
+.dark-theme .contact-info-item p {
+    color: var(--text-dark);
 }
 
-/* Asegurar justificación en móvil */
+.contact-info-item a:hover {
+    color: var(--secondary-color);
+}
+
+/* Footer */
+.footer-section {
+    background: var(--primary-color);
+    color: var(--text-white);
+    position: relative;
+    z-index: 2;
+}
+
+.footer-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.footer-subtitle {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.footer-copyright span {
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+/* Botón scroll to top */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: var(--transition);
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    background: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .text-justify {
-        text-align: justify !important;
-        text-justify: inter-word !important;
+    .profile-img {
+        width: 140px;
+        height: 140px;
     }
-}
-
-/* Estilos específicos para tarjetas de proyectos */
-.card-text.text-justify {
-    text-align: justify !important;
-    text-justify: inter-word !important;
-}
-
-/* Asegurar justificación en tarjetas de proyectos en móvil */
-@media (max-width: 768px) {
-    .card-text.text-justify {
-        text-align: justify !important;
-        text-justify: inter-word !important;
+    
+    .profile-name {
+        font-size: 1.8rem;
     }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .display-6 {
+    
+    .section-title {
         font-size: 1.5rem;
     }
     
-    .h5 {
+    .experience-timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-badge {
+        left: 10px;
+    }
+    
+    .timeline-content {
+        margin-left: 40px;
+    }
+    
+    .theme-toggle {
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
         font-size: 1rem;
     }
     
-    .card-body {
-        padding: 1rem;
-    }
-    
-    .navbar-nav {
-        text-align: center !important;
-        width: 100% !important;
-    }
-    
-    .navbar-nav .nav-item {
-        margin: 0.25rem 0;
-        text-align: center !important;
-        width: 100% !important;
-    }
-    
     .navbar-nav .nav-link {
-        text-align: center !important;
-        display: block !important;
-        width: 100% !important;
-        justify-content: center !important;
-        align-items: center !important;
+        padding: 8px 12px !important;
+        margin: 2px 0;
     }
     
-    .navbar-collapse {
-        text-align: center !important;
+    .contact-card {
+        padding: 20px;
     }
     
-    .navbar-collapse .navbar-nav {
-        margin: 0 auto !important;
-        text-align: center !important;
+    .contact-info-card {
+        padding: 20px;
     }
     
-    /* Estilos específicos para el menú colapsado */
-    .navbar-collapse.show .navbar-nav,
-    .navbar-collapse.collapsing .navbar-nav {
-        text-align: center !important;
-        width: 100% !important;
+    .scroll-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
     }
     
-    .navbar-collapse.show .navbar-nav .nav-item,
-    .navbar-collapse.collapsing .navbar-nav .nav-item {
-        text-align: center !important;
-        width: 100% !important;
+    .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
     }
     
-    .navbar-collapse.show .navbar-nav .nav-link,
-    .navbar-collapse.collapsing .navbar-nav .nav-link {
-        text-align: center !important;
-        width: 100% !important;
-        padding: 0.5rem 1rem !important;
+    .soft-skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-section {
+        padding: 30px 0;
     }
     
-    /* Layout móvil para el header */
-    .header-mobile {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
+    .profile-name {
+        font-size: 1.6rem;
     }
     
-    .header-mobile .col-md-3 {
-        flex: 0 0 auto;
-        width: auto;
+    .profile-title {
+        font-size: 1rem;
     }
     
-    .header-mobile .col-md-6 {
-        flex: 1;
-        text-align: left;
+    .skill-tags {
+        justify-content: center;
     }
     
-    .header-mobile img {
-        max-width: 80px;
-        height: 80px;
+    .quick-contact {
+        justify-content: center;
+        text-align: center;
     }
     
-    .header-mobile h1 {
-        font-size: 1.25rem;
-        margin-bottom: 0.25rem;
+    .navbar-nav .nav-link span {
+        display: none;
     }
     
-    .header-mobile p {
+    .navbar-nav .nav-link i {
+        margin-right: 0;
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .info-card,
+    .about-card,
+    .education-card,
+    .project-card {
+        padding: 15px;
+    }
+    
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .soft-skills-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .theme-toggle {
+        width: 35px;
+        height: 35px;
         font-size: 0.9rem;
-        margin-bottom: 0;
+        top: 12px;
+        right: 12px;
     }
+}
+
+@media (max-width: 400px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Asegurar que no haya superposición */
+.content-section {
+    clear: both;
+}
+
+.row {
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilos específicos para botones alineados */
+.project-button-container {
+    display: flex;
+    align-items: flex-end;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
 }

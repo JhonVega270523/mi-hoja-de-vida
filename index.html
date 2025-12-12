@@ -3,418 +3,908 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOJA DE VIDA JHON LOAIZA</title>
+    <title>Jhon Loaiza - Desarrollador de Software</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome para iconos -->
+    <!-- FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Encabezado con foto -->
-    <header class="bg-dark text-white py-3">
+    <!-- Botón tema claro/oscuro -->
+    <button id="themeToggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Encabezado -->
+    <header class="header-section">
         <div class="container">
-            <div class="row align-items-center justify-content-center header-mobile">
-                <!-- Columna para la foto -->
-                <div class="col-md-3 text-center">
-                    <img id="profilePhoto" src="images/foto.png" alt="Foto de perfil" class="img-fluid rounded-circle" style="max-width: 120px; height: 120px; cursor: pointer;">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-4 mb-md-0">
+                    <div class="profile-img-container">
+                        <img id="profilePhoto" src="images/foto.png" alt="Foto de perfil Jhon Loaiza" class="profile-img">
+                        <div class="profile-status"></div>
+                    </div>
                 </div>
-                <!-- Columna para el texto -->
-                <div class="col-md-6">
-                    <h1 class="display-6">Jhon Faber Loaiza Vega</h1>
-                    <p class="h5">Estudiante en Prácticas de Análisis y Desarrollo de Software</p>
+                <div class="col-md-9">
+                    <h1 class="profile-name">Jhon Faber Loaiza Vega</h1>
+                    <p class="profile-title">Tecnólogo en Análisis y Desarrollo de Software</p>
+                    
+                    <!-- Etiquetas de habilidades -->
+                    <div class="skill-tags mb-3">
+                        <span class="skill-tag">Desarrollo Web</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Frontend</span>
+                    </div>
+                    
+                    <!-- Contacto rápido -->
+                    <div class="quick-contact">
+                        <a href="mailto:jhon020999@gmail.com" class="contact-link me-4">
+                            <i class="fas fa-envelope me-2"></i>jhon020999@gmail.com
+                        </a>
+                        <a href="https://wa.me/573003024889" target="_blank" class="contact-link">
+                            <i class="fas fa-phone me-2"></i>+57 300 302 4889
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Indicador de scroll -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress"></div>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-main navbar-dark">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#">
+                <span class="brand-text">JFLV</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            
+            <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item me-4">
-                        <a class="nav-link text-white" href="#personal">Datos Personales</a>
-                    </li>
-                    <li class="nav-item me-4">
-                        <a class="nav-link text-white" href="#about">Sobre Mí</a>
-                    </li>
-                    <li class="nav-item me-4">
-                        <a class="nav-link text-white" href="#experience">Experiencia</a>
-                    </li>
-                    <li class="nav-item me-4">
-                        <a class="nav-link text-white" href="#education">Educación</a>
-                    </li>
-                    <li class="nav-item me-4">
-                        <a class="nav-link text-white" href="#skills">Habilidades</a>
-                    </li>
-                    <li class="nav-item me-4">
-                        <a class="nav-link text-white" href="#projects">Proyectos</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#personal">
+                            <i class="fas fa-user me-1"></i>Personal
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#contact">Contacto</a>
+                        <a class="nav-link" href="#about">
+                            <i class="fas fa-info-circle me-1"></i>Sobre Mí
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">
+                            <i class="fas fa-briefcase me-1"></i>Experiencia
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">
+                            <i class="fas fa-graduation-cap me-1"></i>Educación
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">
+                            <i class="fas fa-code me-1"></i>Habilidades
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">
+                            <i class="fas fa-project-diagram me-1"></i>Proyectos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <i class="fas fa-envelope me-1"></i>Contacto
+                        </a>
                     </li>
                 </ul>
+                
+                <div class="nav-social d-none d-lg-flex">
+                    <a href="https://jhonvega270523.github.io/NextGen-Digital/" target="_blank" class="social-link">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="https://wa.me/573003024889" target="_blank" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:jhon020999@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Contenido principal -->
-    <main class="container my-5">
-        <!-- Sección: Datos Personales -->
-        <section id="personal" class="mb-5">
-            <h2 class="mb-4 border-bottom pb-2">Datos Personales</h2>
-            <div class="card shadow">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-user me-3"></i>
-                                <div>
-                                    <strong>Nombre completo:</strong><br>
-                                    Jhon Faber Loaiza Vega
-                                </div>
+    <main class="main-content py-5">
+        <div class="container">
+            
+            <!-- Datos Personales -->
+            <section id="personal" class="content-section mb-5">
+                <div class="section-header mb-4">
+                    <h2 class="section-title">
+                        <i class="fas fa-user-circle me-2"></i>Datos Personales
+                    </h2>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-user"></i>
                             </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-birthday-cake me-3"></i>
-                                <div>
-                                    <strong>Fecha de nacimiento:</strong><br>
-                                    02 de septiembre de 1999
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-flag me-3"></i>
-                                <div>
-                                    <strong>Nacionalidad:</strong><br>
-                                    Colombiano
-                                </div>
+                            <div class="info-content">
+                                <h6>Nombre completo</h6>
+                                <p>Jhon Faber Loaiza Vega</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-map-marker-alt me-3"></i>
-                                <div>
-                                    <strong>Dirección:</strong><br>
-                                    Calle 56 # 62 - 67 / Calatrava Itagui
-                                </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-birthday-cake"></i>
                             </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-envelope me-3"></i>
-                                <div>
-                                    <strong>Email:</strong><br>
-                                    <a href="mailto:jhon020999@gmail.com" class="text-decoration-none">jhon020999@gmail.com</a>
-                                </div>
+                            <div class="info-content">
+                                <h6>Fecha de nacimiento</h6>
+                                <p>02 de septiembre de 1999</p>
                             </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-phone me-3"></i>
-                                <div>
-                                    <strong>Teléfono:</strong><br>
-                                    <a href="https://wa.me/573003024889" target="_blank" class="text-decoration-none">+57 300 302 4889</a>
-                                </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <div class="info-content">
+                                <h6>Nacionalidad</h6>
+                                <p>Colombiano</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h6>Dirección</h6>
+                                <p>Calle 56 # 62 - 67 / Calatrava Itagui</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h6>Email</h6>
+                                <a href="mailto:jhon020999@gmail.com">jhon020999@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h6>Teléfono</h6>
+                                <a href="https://wa.me/573003024889" target="_blank">+57 300 302 4889</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Sección: Sobre mí -->
-        <section id="about" class="mb-5">
-            <h2 class="mb-4 border-bottom pb-2">Sobre Mí</h2>
-            <div class="card shadow">
-                <div class="card-body">
-                    <div class="mb-3">
-                        <p class="text-justify mb-0">Soy una persona con excelentes relaciones personales, que le agrada trabajar en equipo, tolerante, tengo una gran disposición para aprender nuevas, diferentes actividades y funciones.</p>
+            <!-- Sobre Mí -->
+            <section id="about" class="content-section mb-5">
+                <div class="section-header mb-4">
+                    <h2 class="section-title">
+                        <i class="fas fa-info-circle me-2"></i>Sobre Mí
+                    </h2>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="about-card">
+                            <div class="about-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="about-content">
+                                <h4>Relaciones Interpersonales</h4>
+                                <p>Soy una persona con excelentes relaciones personales, que le agrada trabajar en equipo, tolerante, con una gran disposición para aprender nuevas actividades y funciones.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <p class="text-justify mb-0">Manejo de PHP, HTML, CSS y JavaScript. Conexiones con bases de datos MySQL en PHPMyAdmin. Manejo de XAMPP, Visual Studio Code, uso de GitHub. Tengo muy buen manejo del frontend y soy muy organizado en mis trabajos.</p>
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="about-card">
+                            <div class="about-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="about-content">
+                                <h4>Habilidades Técnicas</h4>
+                                <p>Manejo de PHP, HTML, CSS y JavaScript. Conexiones con bases de datos MySQL en PHPMyAdmin. Manejo de XAMPP y GitHub.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Sección: Experiencia Laboral -->
-        <section id="experience" class="mb-5">
-            <h2 class="mb-4 border-bottom pb-2">Experiencia Laboral</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <h4>Alimentos Carnicos Grupo Nutresa - Aprendiz de Sistemas</h4>
-                            <p class="text-muted"><i class="fas fa-calendar-alt"></i> 2025 - Actualidad <span class="ms-3">(6 meses en prácticas)</span></p>
-                            <p>Manejo de software y hardware.</p>
-                            <p>Manejo de impresoras IP.</p>
-                            <p>Instalacion de sistemas operativos y aplicaciones.</p>
-                            <p>Soporte Tecnico TI.</p>
-                        </div>
-                    </div>
+            <!-- Experiencia Laboral -->
+            <section id="experience" class="content-section mb-5">
+                <div class="section-header mb-4">
+                    <h2 class="section-title">
+                        <i class="fas fa-briefcase me-2"></i>Experiencia Laboral
+                    </h2>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <h4>Truly Nolen SAS - Lider de Programación de Servicios</h4>
-                            <p class="text-muted"><i class="fas fa-calendar-alt"></i> 2024 - 2025 <span class="ms-3">(1 año)</span></p>
-                            <p>Responsable de la programacion de los servicios de los tecnicos.</p>
+                
+                <div class="experience-timeline">
+                    <!-- Experiencia 1 -->
+                    <div class="timeline-item current">
+                        <div class="timeline-badge">
+                            <i class="fas fa-briefcase"></i>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <h4>Mandar y Servir SAS - Analista TI</h4>
-                            <p class="text-muted"><i class="fas fa-calendar-alt"></i> 2020 - 2024 <span class="ms-3">(4 años)</span></p>
-                            <p>Manejo de software y hardware.</p>
-                            <p>Manejo de impresoras y telefonía IP.</p>
-                            <p>Redes de telecomunicaciones.</p>
-                            <p>Instalación de sistemas operativos y aplicaciones.</p>
-                            <p>Implementacion de seguridad en equipos.</p>
-                            <p>Mantenimiento preventivo y correctivo de equipos.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <h4>Ficsonder Producciones - Jefe de Logistica</h4>
-                            <p class="text-muted"><i class="fas fa-calendar-alt"></i> 2017 - 2020 <span class="ms-3">(3 años)</span></p>
-                            <p>Manejo de rider musical.</p>
-                            <p>Montaje de eventos.</p>
-                            <p>Iluminación.</p>
-                            <p>Animación.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección: Educación -->
-        <section id="education" class="mb-5">
-            <h2 class="mb-4 border-bottom pb-2">Educación</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <h4>Politecnico Superior</h4>
-                            <p class="text-muted"><i class="fas fa-calendar-alt"></i> 2025</p>
-                            <p>Diplomado en Power BI</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <h4>Politecnico de Colombia</h4>
-                            <p class="text-muted"><i class="fas fa-calendar-alt"></i> 2025</p>
-                            <p>Diplomado en Programación PHP</p>
-                            <p>Diplomado en Programación JavaScript</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <h4>Servicio Nacional de Aprendizaje - SENA</h4>
-                            <p class="text-muted"><i class="fas fa-calendar-alt"></i> 2023</p>
-                            <p>Estudiante en Prácticas de Tecnología en Analisis y Desarrollo de Software.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <h4>I.E Maria Jesus Mejia</h4>
-                            <p class="text-muted"><i class="fas fa-calendar-alt"></i> 2016</p>
-                            <p>Bachiller Academico.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <h4>I.E Manuel Uribe Angel</h4>
-                            <p class="text-muted"><i class="fas fa-calendar-alt"></i> 2010</p>
-                            <p>Primaria Academica.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección: Habilidades -->
-        <section id="skills" class="mb-5">
-            <h2 class="mb-4 border-bottom pb-2">Habilidades</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card shadow mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-code"></i> Desarrollo Web</h5>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-check text-success"></i> HTML</li>
-                                <li><i class="fas fa-check text-success"></i> CSS</li>
-                                <li><i class="fas fa-check text-success"></i> JavaScript</li>
-                                <li><i class="fas fa-check text-success"></i> PHP</li>
-                                <li><i class="fas fa-check text-success"></i> Bases de batos con MySQL PHPMyAdmin</li>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h4>Alimentos Carnicos Grupo Nutresa</h4>
+                                <span class="timeline-date">2025</span>
+                            </div>
+                            <p class="timeline-subtitle">Aprendiz de Sistemas</p>
+                            <ul class="timeline-list">
+                                <li>Manejo de software y hardware</li>
+                                <li>Manejo de impresoras IP</li>
+                                <li>Instalación de sistemas operativos y aplicaciones</li>
+                                <li>Soporte Técnico TI</li>
                             </ul>
+                            <div class="timeline-duration">
+                                <i class="fas fa-clock me-1"></i>6 meses en prácticas
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card shadow mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-paint-brush"></i> Actitudes</h5>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-check text-success"></i> Liderazgo</li>
-                                <li><i class="fas fa-check text-success"></i> Comunicación</li>
-                                <li><i class="fas fa-check text-success"></i> Toma de decisiones</li>
-                                <li><i class="fas fa-check text-success"></i> Gestión del tiempo</li>
-                                <li><i class="fas fa-check text-success"></i> Trabajo en equipo</li>
+                    
+                    <!-- Experiencia 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h4>Truly Nolen SAS</h4>
+                                <span class="timeline-date">2024 - 2025</span>
+                            </div>
+                            <p class="timeline-subtitle">Líder de Programación de Servicios</p>
+                            <ul class="timeline-list">
+                                <li>Responsable de la programación de los servicios de los técnicos</li>
                             </ul>
+                            <div class="timeline-duration">
+                                <i class="fas fa-clock me-1"></i>1 año
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Experiencia 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h4>Mandar y Servir SAS</h4>
+                                <span class="timeline-date">2020 - 2024</span>
+                            </div>
+                            <p class="timeline-subtitle">Analista TI</p>
+                            <ul class="timeline-list">
+                                <li>Manejo de software y hardware</li>
+                                <li>Manejo de impresoras y telefonía IP</li>
+                                <li>Redes de telecomunicaciones</li>
+                                <li>Instalación de sistemas operativos y aplicaciones</li>
+                                <li>Implementación de seguridad en equipos</li>
+                                <li>Mantenimiento preventivo y correctivo de equipos</li>
+                            </ul>
+                            <div class="timeline-duration">
+                                <i class="fas fa-clock me-1"></i>4 años
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Experiencia 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h4>Ficsonder Producciones</h4>
+                                <span class="timeline-date">2017 - 2020</span>
+                            </div>
+                            <p class="timeline-subtitle">Jefe de Logística</p>
+                            <ul class="timeline-list">
+                                <li>Manejo de rider musical</li>
+                                <li>Montaje de eventos</li>
+                                <li>Iluminación</li>
+                                <li>Animación</li>
+                            </ul>
+                            <div class="timeline-duration">
+                                <i class="fas fa-clock me-1"></i>3 años
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Sección: Proyectos -->
-        <section id="projects" class="mb-5">
-            <h2 class="mb-4 border-bottom pb-2">Proyectos Desarrollados</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-globe"></i> Detalles Laurel Medellín</h5>
-                            <p class="card-text text-justify">Sitio web desarrollado para empresa de detalles, flores, anchetas, desayunos sorpresa, peluches y regalos especiales.</p>
-                            <a href="https://detalleslaurelmedellin.com" target="_blank" class="btn btn-primary">
-                                🔗 Ver Sitio
-                            </a>
+            <!-- Educación -->
+            <section id="education" class="content-section mb-5">
+                <div class="section-header mb-4">
+                    <h2 class="section-title">
+                        <i class="fas fa-graduation-cap me-2"></i>Educación
+                    </h2>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="education-card highlight">
+                            <div class="education-header">
+                                <div class="education-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <h5>Politecnico Superior</h5>
+                                    <span class="education-year">2025</span>
+                                </div>
+                            </div>
+                            <p class="education-desc">Diplomado en Power BI</p>
+                            <div class="education-badge">
+                                <i class="fas fa-certificate me-1"></i>Certificado
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="education-card highlight">
+                            <div class="education-header">
+                                <div class="education-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div>
+                                    <h5>Politecnico de Colombia</h5>
+                                    <span class="education-year">2025</span>
+                                </div>
+                            </div>
+                            <p class="education-desc">Diplomado en Programación PHP, JavaScript, Aplicaciones de Google e Informática Básica</p>
+                            <div class="education-badge">
+                                <i class="fas fa-certificate me-1"></i>Certificado
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="education-card">
+                            <div class="education-header">
+                                <div class="education-icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div>
+                                    <h5>Servicio Nacional de Aprendizaje - SENA</h5>
+                                    <span class="education-year">2023</span>
+                                </div>
+                            </div>
+                            <p class="education-desc">Tecnólogo en Análisis y Desarrollo de Software</p>
+                            <div class="education-badge">
+                                <i class="fas fa-user-graduate me-1"></i>Graduado
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="education-card">
+                            <div class="education-header">
+                                <div class="education-icon">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <div>
+                                    <h5>I.E Maria Jesus Mejia</h5>
+                                    <span class="education-year">2016</span>
+                                </div>
+                            </div>
+                            <p class="education-desc">Bachiller Académico</p>
+                            <div class="education-badge">
+                                <i class="fas fa-award me-1"></i>Graduado
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="education-card">
+                            <div class="education-header">
+                                <div class="education-icon">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <div>
+                                    <h5>I.E Manuel Uribe Angel</h5>
+                                    <span class="education-year">2010</span>
+                                </div>
+                            </div>
+                            <p class="education-desc">Primaria Académica</p>
+                            <div class="education-badge">
+                                <i class="fas fa-award me-1"></i>Graduado
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-globe"></i> Consegur SAS</h5>
-                            <p class="card-text text-justify">Plataforma web corporativa para empresa de gestión de servicios empresariales.</p>
-                            <a href="https://consegursas.co" target="_blank" class="btn btn-primary">
-                                🔗 Ver Sitio
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-globe"></i> Sweet Beauty</h5>
-                            <p class="card-text text-justify">E-commerce desarrollado para tienda femenina que vende lencería, perfumes, accesorios, pijamas, vestidos de baño y maquillaje.</p>
-                            <a href="https://sweetbeautycol.com" target="_blank" class="btn btn-primary">
-                                🔗 Ver Sitio
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Sección: Contacto -->
-        <section id="contact" class="mb-5">
-            <h2 class="mb-4 border-bottom pb-2">Contacto</h2>
-            <div class="card shadow">
-                <div class="card-body">
-                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:jhon020999@gmail.com" class="text-decoration-none">jhon020999@gmail.com</a></p>
-                    <p><i class="fas fa-phone"></i> Teléfono: <a href="https://wa.me/573003024889" target="_blank" class="text-decoration-none">+57 300 302 4889</a></p>
-                    <p><i class="fas fa-globe"></i> Mi Página Web: <a href="https://jhonvega270523.github.io/NextGen-Digital/" target="_blank" class="text-decoration-none">NextGen Digital</a></p>
+            <!-- Habilidades -->
+            <section id="skills" class="content-section mb-5">
+                <div class="section-header mb-4">
+                    <h2 class="section-title">
+                        <i class="fas fa-code me-2"></i>Habilidades
+                    </h2>
                 </div>
-            </div>
-        </section>
+                
+                <div class="row">
+                    <!-- Desarrollo Web -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="skill-category-card">
+                            <h4 class="skill-category-title">
+                                <i class="fas fa-laptop-code me-2"></i>Desarrollo Web
+                            </h4>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>HTML</span>
+                                        <span>95%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>CSS</span>
+                                        <span>90%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>JavaScript</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>PHP</span>
+                                        <span>80%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>MySQL</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Habilidades Blandas -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="skill-category-card h-100">
+                            <h4 class="skill-category-title">
+                                <i class="fas fa-user-check me-2"></i>Habilidades Blandas
+                            </h4>
+                            <div class="soft-skills-grid">
+                                <div class="soft-skill-item">
+                                    <span class="soft-skill-tag">Liderazgo</span>
+                                </div>
+                                <div class="soft-skill-item">
+                                    <span class="soft-skill-tag">Comunicación</span>
+                                </div>
+                                <div class="soft-skill-item">
+                                    <span class="soft-skill-tag">Toma de decisiones</span>
+                                </div>
+                                <div class="soft-skill-item">
+                                    <span class="soft-skill-tag">Gestión del tiempo</span>
+                                </div>
+                                <div class="soft-skill-item">
+                                    <span class="soft-skill-tag">Trabajo en equipo</span>
+                                </div>
+                                <div class="soft-skill-item">
+                                    <span class="soft-skill-tag">Aprendizaje rápido</span>
+                                </div>
+                                <div class="soft-skill-item">
+                                    <span class="soft-skill-tag">Organización</span>
+                                </div>
+                                <div class="soft-skill-item">
+                                    <span class="soft-skill-tag">Responsabilidad</span>
+                                </div>
+                                <div class="soft-skill-item">
+                                    <span class="soft-skill-tag">Adaptabilidad</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Herramientas (sección separada) -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="skill-category-card">
+                            <h4 class="skill-category-title">
+                                <i class="fas fa-tools me-2"></i>Herramientas y Tecnologías
+                            </h4>
+                            <div class="tools-grid">
+                                <div class="tool-item">
+                                    <i class="fab fa-html5"></i>
+                                    <span>HTML</span>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fab fa-css3-alt"></i>
+                                    <span>CSS</span>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fab fa-js-square"></i>
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fab fa-php"></i>
+                                    <span>PHP</span>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fas fa-database"></i>
+                                    <span>MySQL</span>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fab fa-git-alt"></i>
+                                    <span>Git</span>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fas fa-database"></i>
+                                    <span>PHPMyAdmin</span>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fas fa-server"></i>
+                                    <span>XAMPP</span>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fas fa-code"></i>
+                                    <span>VS Code</span>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fab fa-bootstrap"></i>
+                                    <span>Bootstrap</span>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Power BI</span>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fab fa-google"></i>
+                                    <span>Google Apps</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Proyectos -->
+            <section id="projects" class="content-section mb-5">
+                <div class="section-header mb-4">
+                    <h2 class="section-title">
+                        <i class="fas fa-project-diagram me-2"></i>Proyectos Desarrollados
+                    </h2>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <i class="fas fa-gifts"></i>
+                            </div>
+                            <div class="project-content">
+                                <h5 class="project-title">Detalles Laurel Medellín</h5>
+                                <p class="project-desc">Sitio web desarrollado para empresa de detalles, flores, anchetas, desayunos sorpresa, peluches y regalos especiales.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">PHP</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">Bootstrap</span>
+                                </div>
+                                <div class="project-button-container">
+                                    <a href="https://detalleslaurelmedellin.com" target="_blank" class="project-link">
+                                        <i class="fas fa-external-link-alt me-2"></i>Visitar Sitio
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="project-content">
+                                <h5 class="project-title">Consegur SAS</h5>
+                                <p class="project-desc">Plataforma web corporativa para empresa de gestión de servicios empresariales.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                </div>
+                                <div class="project-button-container">
+                                    <a href="https://consegursas.co" target="_blank" class="project-link">
+                                        <i class="fas fa-external-link-alt me-2"></i>Visitar Sitio
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="project-content">
+                                <h5 class="project-title">Sweet Beauty</h5>
+                                <p class="project-desc">E-commerce desarrollado para tienda femenina que vende lencería, perfumes, accesorios, pijamas, vestidos de baño y maquillaje.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">PHP</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">E-commerce</span>
+                                </div>
+                                <div class="project-button-container">
+                                    <a href="https://sweetbeautycol.com" target="_blank" class="project-link">
+                                        <i class="fas fa-external-link-alt me-2"></i>Visitar Sitio
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contacto -->
+            <section id="contact" class="content-section">
+                <div class="section-header mb-4">
+                    <h2 class="section-title">
+                        <i class="fas fa-envelope me-2"></i>Contacto
+                    </h2>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-8 mb-4">
+                        <div class="contact-card">
+                            <h4 class="mb-4">¿Interesado en trabajar conmigo?</h4>
+                            <p class="mb-4">Estoy disponible para oportunidades laborales y proyectos freelance. No dudes en contactarme.</p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <a href="mailto:jhon020999@gmail.com" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Enviar Email
+                                </a>
+                                <a href="https://wa.me/573003024889" target="_blank" class="btn btn-success btn-lg">
+                                    <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="contact-info-card">
+                            <div class="contact-info-item mb-3">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <div>
+                                    <h6>Email</h6>
+                                    <a href="mailto:jhon020999@gmail.com">jhon020999@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item mb-3">
+                                <i class="fas fa-phone contact-icon"></i>
+                                <div>
+                                    <h6>Teléfono</h6>
+                                    <a href="https://wa.me/573003024889" target="_blank">+57 300 302 4889</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item mb-3">
+                                <i class="fas fa-globe contact-icon"></i>
+                                <div>
+                                    <h6>Portafolio</h6>
+                                    <a href="https://jhonvega270523.github.io/NextGen-Digital/" target="_blank">NextGen Digital</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <div>
+                                    <h6>Ubicación</h6>
+                                    <p>Itagüí, Antioquia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <!-- Pie de página -->
-    <footer class="bg-dark text-white text-center py-3">
+    <!-- Footer -->
+    <footer class="footer-section py-4">
         <div class="container">
-            <p class="mb-0">¡Transformemos ideas en realidad digital!</p>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5 class="footer-title">Jhon Faber Loaiza Vega</h5>
+                    <p class="footer-subtitle">Tecnólogo en Análisis y Desarrollo de Software</p>
+                </div>
+                
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-social">
+                        <a href="https://wa.me/573003024889" target="_blank" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:jhon020999@gmail.com" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://jhonvega270523.github.io/NextGen-Digital/" target="_blank" class="social-icon">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="footer-divider my-3">
+            
+            <div class="text-center">
+                <p class="footer-copyright mb-0">
+                    &copy; 2024 Jhon Faber Loaiza Vega. Todos los derechos reservados.
+                    <span class="d-block mt-1">¡Transformemos ideas en realidad digital!</span>
+                </p>
+            </div>
         </div>
     </footer>
 
-    <!-- Modal para mostrar la foto ampliada -->
-    <div class="modal fade" id="photoModal" tabindex="-1" aria-hidden="true">
+    <!-- Botón scroll to top -->
+    <button id="scrollToTop" class="scroll-top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Modal para foto -->
+    <div class="modal fade" id="photoModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 bg-transparent">
-                <div class="modal-body text-center p-0">
-                    <img src="images/foto.png" alt="Foto de perfil ampliada" class="img-fluid rounded" style="max-width: 300px; max-height: 300px;">
+            <div class="modal-content">
+                <div class="modal-body text-center p-4">
+                    <img src="images/foto.png" alt="Foto de perfil" class="img-fluid rounded">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Botón Scroll to Top -->
-    <button id="scrollToTop" class="btn btn-primary position-fixed" style="bottom: 65px; right: 15px; z-index: 1000; display: none; border-radius: 50%; width: 50px; height: 50px;">
-        ↑
-    </button>
-
-    <!-- Bootstrap JS (opcional, si necesitas funcionalidades JS) -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Script para scroll suave con offset del navbar y scroll to top -->
+    <!-- Script personalizado -->
     <script>
-        // Scroll automático a la parte superior al cargar la página
-        window.addEventListener('beforeunload', function() {
-            window.scrollTo(0, 0);
-        });
-        
-        // Scroll a la parte superior al cargar la página
-        window.addEventListener('load', function() {
-            window.scrollTo(0, 0);
-        });
-        
         document.addEventListener('DOMContentLoaded', function() {
-            // Scroll inmediato a la parte superior
-            window.scrollTo(0, 0);
-            // Obtener todos los enlaces de navegación
-            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-            const scrollToTopBtn = document.getElementById('scrollToTop');
-            const profilePhoto = document.getElementById('profilePhoto');
-            const photoModal = new bootstrap.Modal(document.getElementById('photoModal'));
+            // Tema claro/oscuro
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('i');
             
-            // Funcionalidad para mostrar la foto en modal
-            profilePhoto.addEventListener('click', function() {
-                photoModal.show();
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-theme');
+                if (document.body.classList.contains('dark-theme')) {
+                    themeIcon.classList.replace('fa-moon', 'fa-sun');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    themeIcon.classList.replace('fa-sun', 'fa-moon');
+                    localStorage.setItem('theme', 'light');
+                }
             });
             
-            // Funcionalidad de navegación suave
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
+            // Cargar tema guardado
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+            
+            // Ajustar posición del botón tema cuando el navbar se hace fijo
+            const navbar = document.querySelector('.navbar-main');
+            const themeToggleButton = document.getElementById('themeToggle');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 100) {
+                    themeToggleButton.style.top = '15px';
+                    themeToggleButton.style.width = '40px';
+                    themeToggleButton.style.height = '40px';
+                    themeToggleButton.style.fontSize = '1rem';
+                } else {
+                    themeToggleButton.style.top = '20px';
+                    themeToggleButton.style.width = '50px';
+                    themeToggleButton.style.height = '50px';
+                    themeToggleButton.style.fontSize = '1.2rem';
+                }
+            });
+            
+            // Scroll suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
                     e.preventDefault();
                     
-                    // Cerrar el menú hamburguesa en móvil
-                    const navbarCollapse = document.getElementById('navbarNav');
-                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                    if (bsCollapse) {
-                        bsCollapse.hide();
-                    }
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
                     
-                    // Obtener el ID de la sección objetivo
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    
-                    if (targetSection) {
-                        // Calcular la posición considerando la altura del navbar
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
                         const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                        const targetPosition = targetSection.offsetTop - navbarHeight;
+                        const targetPosition = targetElement.offsetTop - navbarHeight - 20;
                         
-                        // Scroll suave a la sección objetivo
                         window.scrollTo({
                             top: targetPosition,
                             behavior: 'smooth'
                         });
+                        
+                        // Cerrar menú en móvil
+                        const navbarCollapse = document.getElementById('mainNav');
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                        if (bsCollapse) {
+                            bsCollapse.hide();
+                        }
                     }
                 });
             });
             
-            // Funcionalidad del botón Scroll to Top
+            // Indicador de scroll
+            const scrollProgress = document.querySelector('.scroll-progress');
+            window.addEventListener('scroll', function() {
+                const scrollTop = document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = (scrollTop / scrollHeight) * 100;
+                scrollProgress.style.width = scrollPercentage + '%';
+            });
+            
+            // Botón scroll to top
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
+            
             scrollToTopBtn.addEventListener('click', function() {
                 window.scrollTo({
                     top: 0,
@@ -422,13 +912,33 @@
                 });
             });
             
-            // Mostrar/ocultar botón según el scroll
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    scrollToTopBtn.style.display = 'block';
-                } else {
-                    scrollToTopBtn.style.display = 'none';
-                }
+            // Modal para foto de perfil
+            const profilePhoto = document.getElementById('profilePhoto');
+            const photoModal = new bootstrap.Modal(document.getElementById('photoModal'));
+            
+            if (profilePhoto) {
+                profilePhoto.addEventListener('click', function() {
+                    photoModal.show();
+                });
+            }
+            
+            // Animación al hacer scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar secciones para animación
+            document.querySelectorAll('.content-section').forEach(section => {
+                observer.observe(section);
             });
         });
     </script>
