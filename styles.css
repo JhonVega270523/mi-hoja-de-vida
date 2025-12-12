@@ -52,12 +52,12 @@ body {
     overflow-x: hidden;
 }
 
-/* Botón tema */
+/* Botón tema - MODIFICADO: Siempre visible, posición fija ABAJO */
 .theme-toggle {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1002;
+    right: 30px;
+    bottom: 30px; /* 30px desde abajo, posición fija */
+    z-index: 1000;
     background: var(--secondary-color);
     color: white;
     border: none;
@@ -71,10 +71,13 @@ body {
     font-size: 1.2rem;
     box-shadow: var(--box-shadow);
     transition: var(--transition);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .theme-toggle:hover {
-    transform: rotate(30deg);
+    transform: rotate(30deg) scale(1.1);
     box-shadow: var(--box-shadow-hover);
 }
 
@@ -1132,10 +1135,10 @@ body {
     font-size: 0.85rem;
 }
 
-/* Botón scroll to top */
+/* Botón scroll to top - MODIFICADO: ARRIBA DEL BOTÓN DE TEMA */
 .scroll-top-btn {
     position: fixed;
-    bottom: 30px;
+    bottom: 100px; /* 100px desde abajo, dejando 70px de separación del botón de tema */
     right: 30px;
     width: 50px;
     height: 50px;
@@ -1164,7 +1167,7 @@ body {
 
 .scroll-top-btn:hover {
     background: var(--accent-color);
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.1);
     box-shadow: var(--box-shadow-hover);
 }
 
@@ -1205,16 +1208,29 @@ body {
         height: 40px;
     }
     
-    /* Ajustes para el botón tema en móvil CORREGIDO */
-    .theme-toggle {
-        position: fixed;
-        top: 15px;
+    /* Botón scroll to top más pequeño en móvil */
+    .scroll-top-btn {
+        bottom: 80px; /* 80px desde abajo, dejando espacio para el botón de tema */
         right: 15px;
         width: 40px;
         height: 40px;
         font-size: 1rem;
-        z-index: 1002;
-        transition: all 0.3s ease;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Botón tema - EN MÓVIL: ABAJO, MISMO TAMAÑO QUE SCROLL TOP */
+    .theme-toggle {
+        position: fixed;
+        bottom: 30px; /* Posición fija en la parte inferior derecha */
+        right: 15px;
+        width: 40px; /* Mismo tamaño que scroll to top en móvil */
+        height: 40px; /* Mismo tamaño que scroll to top en móvil */
+        font-size: 1rem; /* Mismo tamaño de fuente */
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Misma sombra */
+        opacity: 1; /* Siempre visible */
+        visibility: visible; /* Siempre visible */
+        transform: translateY(0); /* Sin animación de aparición */
+        z-index: 1000; /* Mismo z-index que scroll to top */
     }
     
     /* Navbar - centrar menú hamburguesa */
@@ -1252,16 +1268,6 @@ body {
     
     .contact-info-card {
         padding: 20px;
-    }
-    
-    /* Botón scroll to top más pequeño y pegado al costado derecho en móvil */
-    .scroll-top-btn {
-        bottom: 15px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
     }
     
     .tools-grid-full {
@@ -1339,18 +1345,18 @@ body {
         gap: 8px;
     }
     
-    /* Botón tema más pequeño en móvil muy pequeño */
-    .theme-toggle {
-        width: 35px;
-        height: 35px;
-        font-size: 0.9rem;
-        top: 12px;
-        right: 12px;
-    }
-    
     /* Botón scroll to top aún más pequeño en móviles pequeños */
     .scroll-top-btn {
-        bottom: 12px;
+        bottom: 75px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+    }
+    
+    /* Botón tema - igual tamaño que scroll to top en móviles pequeños */
+    .theme-toggle {
+        bottom: 25px;
         right: 12px;
         width: 38px;
         height: 38px;
@@ -1385,7 +1391,16 @@ body {
     
     /* Botón scroll to top más pequeño y más pegado al borde en móviles muy pequeños */
     .scroll-top-btn {
-        bottom: 10px;
+        bottom: 70px;
+        right: 10px;
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+    }
+    
+    /* Botón tema - igual tamaño que scroll to top en móviles muy pequeños */
+    .theme-toggle {
+        bottom: 22px;
         right: 10px;
         width: 36px;
         height: 36px;

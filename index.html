@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Botón tema claro/oscuro -->
-    <button id="themeToggle" class="theme-toggle">
-        <i class="fas fa-moon"></i>
-    </button>
+    <!-- Indicador de scroll -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress"></div>
+    </div>
 
     <!-- Encabezado -->
     <header class="header-section">
@@ -52,11 +52,6 @@
             </div>
         </div>
     </header>
-
-    <!-- Indicador de scroll -->
-    <div class="scroll-indicator">
-        <div class="scroll-progress"></div>
-    </div>
 
     <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-main navbar-dark">
@@ -835,9 +830,14 @@
         </div>
     </footer>
 
-    <!-- Botón scroll to top -->
+    <!-- Botón scroll to top - AHORA ARRIBA -->
     <button id="scrollToTop" class="scroll-top-btn">
         <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Botón tema claro/oscuro - AHORA ABAJO -->
+    <button id="themeToggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
     </button>
 
     <!-- Modal para foto -->
@@ -860,7 +860,6 @@
             // Tema claro/oscuro
             const themeToggle = document.getElementById('themeToggle');
             const themeIcon = themeToggle.querySelector('i');
-            const navbar = document.querySelector('.navbar-main');
             
             themeToggle.addEventListener('click', function() {
                 document.body.classList.toggle('dark-theme');
@@ -879,70 +878,7 @@
                 themeIcon.classList.replace('fa-moon', 'fa-sun');
             }
             
-            // Ajustar posición del botón tema cuando el navbar se hace fijo
-            const themeToggleButton = document.getElementById('themeToggle');
-            
-            // Función para ajustar el botón de tema CORREGIDA
-            function adjustThemeButton() {
-                if (window.innerWidth <= 768) {
-                    // En móvil
-                    if (window.pageYOffset > 50) {
-                        // Cuando se hace scroll, mover el botón al navbar CORREGIDO
-                        themeToggleButton.style.position = 'absolute';
-                        themeToggleButton.style.top = '50%';
-                        themeToggleButton.style.right = 'auto';
-                        themeToggleButton.style.left = '10px';
-                        themeToggleButton.style.transform = 'translateY(-50%)';
-                        themeToggleButton.style.width = '35px';
-                        themeToggleButton.style.height = '35px';
-                        themeToggleButton.style.fontSize = '0.9rem';
-                        themeToggleButton.style.zIndex = '1003';
-                        themeToggleButton.style.background = 'var(--accent-color)';
-                        
-                        // Agregar padding al navbar para hacer espacio
-                        navbar.style.paddingLeft = '50px';
-                    } else {
-                        // Cuando está en el top, posición normal
-                        themeToggleButton.style.position = 'fixed';
-                        themeToggleButton.style.top = '15px';
-                        themeToggleButton.style.right = '15px';
-                        themeToggleButton.style.left = 'auto';
-                        themeToggleButton.style.transform = 'none';
-                        themeToggleButton.style.width = '40px';
-                        themeToggleButton.style.height = '40px';
-                        themeToggleButton.style.fontSize = '1rem';
-                        themeToggleButton.style.zIndex = '1002';
-                        themeToggleButton.style.background = 'var(--secondary-color)';
-                        
-                        // Remover padding del navbar
-                        navbar.style.paddingLeft = '';
-                    }
-                } else {
-                    // En desktop, comportamiento normal
-                    if (window.pageYOffset > 100) {
-                        themeToggleButton.style.top = '15px';
-                        themeToggleButton.style.width = '40px';
-                        themeToggleButton.style.height = '40px';
-                        themeToggleButton.style.fontSize = '1rem';
-                    } else {
-                        themeToggleButton.style.top = '20px';
-                        themeToggleButton.style.width = '50px';
-                        themeToggleButton.style.height = '50px';
-                        themeToggleButton.style.fontSize = '1.2rem';
-                    }
-                }
-            }
-            
-            // Escuchar evento de scroll
-            window.addEventListener('scroll', adjustThemeButton);
-            
-            // Escuchar evento de redimensionamiento
-            window.addEventListener('resize', adjustThemeButton);
-            
-            // Ejecutar al cargar la página
-            adjustThemeButton();
-            
-            // Scroll suave CORREGIDO
+            // Scroll suave
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -952,7 +888,6 @@
                     
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                        // Calcular la posición exacta considerando el navbar fijo
                         const navbarHeight = document.querySelector('.navbar-main').offsetHeight;
                         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                         const offsetPosition = targetPosition - navbarHeight - 20;
@@ -979,11 +914,9 @@
                 const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                 const scrollPercentage = (scrollTop / scrollHeight) * 100;
                 scrollProgress.style.width = scrollPercentage + '%';
-            });
-            
-            // Botón scroll to top
-            const scrollToTopBtn = document.getElementById('scrollToTop');
-            window.addEventListener('scroll', function() {
+                
+                // Botón scroll to top
+                const scrollToTopBtn = document.getElementById('scrollToTop');
                 if (window.pageYOffset > 300) {
                     scrollToTopBtn.classList.add('show');
                 } else {
@@ -991,6 +924,8 @@
                 }
             });
             
+            // Botón scroll to top
+            const scrollToTopBtn = document.getElementById('scrollToTop');
             scrollToTopBtn.addEventListener('click', function() {
                 window.scrollTo({
                     top: 0,
